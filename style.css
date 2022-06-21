@@ -27,3 +27,18 @@
 #modalOut{
     width: 100px;
 }
+
+/* menu */
+.selected{
+    background-color: gray;
+    color: white;
+}
+#menu2_container{
+    position: absolute;
+    left: 50px;
+    border: 3px solid gray;
+
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
