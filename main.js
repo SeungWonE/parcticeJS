@@ -1,9 +1,9 @@
 
 function modalToggle(){
     var modal = document.getElementById('modal');
-    alert(modal.style.display);
+
     if(modal.style.display =='none'){
-        modal.style.display = 'show';
+        modal.style.display = 'block';
     }
     else{
         modal.style.display = 'none';
@@ -13,5 +13,5 @@ function modalToggle(){
 var modalInButton = document.getElementById('modalIn');
 var modalOutButton = document.getElementById('modalOut');
 
-modalInButton.addEventListener("click", modalToggle());
-modalOutButton.addEventListener("click", modalToggle());
+modalInButton.addEventListener("click", modalToggle);
+modalOutButton.addEventListener("click", modalToggle);
