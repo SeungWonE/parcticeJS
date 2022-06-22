@@ -42,3 +42,33 @@
     flex-direction: column;
     display: none;
 }
+
+/* slider */
+#container{
+    display: flex;
+    flex-direction: row;
+
+    border: solid 0px;
+    overflow: hidden;
+    width: 206px;
+    height: 106px;
+    position: relative;
+}
+#container .box{
+    border: 3px solid gray;
+    width: 200px;
+    height: 100px;
+    color: gray;
+    position: absolute;
+
+    text-align: center;
+}
+#container #box1{
+    left: 0px;
+}
+#container #box2{
+    left: 206px;
+}
+#container #box3{
+    left: 412px;
+}
