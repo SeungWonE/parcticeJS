@@ -20,6 +20,7 @@ modalOutButton.addEventListener("click", modalToggle);
 var menuButtons = [document.getElementById('menu1'), document.getElementById('menu2'), document.getElementById('menu2_1'), document.getElementById('menu2_2')];
 var menu2Container = document.getElementById('menu2_container')
 
+
 function removeChoseMenu(event){
     for(var i=0; i<4; i++){
         menuButtons[i].classList.remove("selected");
@@ -39,3 +40,6 @@ menuButtons[2].addEventListener("click", removeChoseMenu);
 menuButtons[2].addEventListener("click", function(){menuButtons[2].classList.add("selected");});
 menuButtons[3].addEventListener("click", removeChoseMenu);
 menuButtons[3].addEventListener("click", function(){menuButtons[3].classList.add("selected");});
+
+/* slider */
+
