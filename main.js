@@ -42,4 +42,11 @@ menuButtons[3].addEventListener("click", removeChoseMenu);
 menuButtons[3].addEventListener("click", function(){menuButtons[3].classList.add("selected");});
 
 /* slider */
+var controlButtons = [document.getElementById('control1'), document.getElementById('control2'), document.getElementById('control3')];
 
+function moveSlider(index){
+    var level = 0;
+    
+}
+
+controlButtons[0].addEventListener('click', function(){controlButtons[0].innerText='@';});
