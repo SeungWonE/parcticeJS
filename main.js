@@ -43,10 +43,48 @@ menuButtons[3].addEventListener("click", function(){menuButtons[3].classList.add
 
 /* slider */
 var controlButtons = [document.getElementById('control1'), document.getElementById('control2'), document.getElementById('control3')];
+var boxs = [document.getElementById('box1'),document.getElementById('box2'),document.getElementById('box3')];
+let moveSliderInterv;
+
+boxs[0].style.left = 206 * 0 + 'px';
+boxs[1].style.left = 206 * 1 + 'px';
+boxs[2].style.left = 206 * 2 + 'px';
 
 function moveSlider(index){
-    var level = 0;
-    
+    var level = parseInt(boxs[0].style.left) - (-(index)*206); // (-(index)*206) = box1's left px we need
+
+    moveSliderInterv = setInterval(function(){level= moveSliderAction(level);}, 1);
 }
 
-controlButtons[0].addEventListener('click', function(){controlButtons[0].innerText='@';});
+function moveSliderAction(level){
+    if(level>0){
+        level -= 1;
+
+        boxs[0].style.left = parseInt(boxs[0].style.left) - 1 + 'px';
+        boxs[1].style.left = parseInt(boxs[1].style.left) - 1 + 'px';
+        boxs[2].style.left = parseInt(boxs[2].style.left) - 1 + 'px';
+    }
+    else if(level<0){
+        level += 1;
+
+        boxs[0].style.left = parseInt(boxs[0].style.left) + 1 + 'px';
+        boxs[1].style.left = parseInt(boxs[1].style.left) + 1 + 'px';
+        boxs[2].style.left = parseInt(boxs[2].style.left) + 1 + 'px';
+    }
+    else{
+        clearInterval(moveSliderInterv);
+    }
+
+    return(level);
+}
+
+function resetControlButton(index){
+    for(var i=0; i<3; i++){
+     controlButtons[i].innerText = '-';
+    }
+    controlButtons[index].innerText = '@';
+}
+
+controlButtons[0].addEventListener('click', function(){resetControlButton(0);moveSlider(0);});
+controlButtons[1].addEventListener('click', function(){resetControlButton(1);moveSlider(1);});
+controlButtons[2].addEventListener('click', function(){resetControlButton(2);moveSlider(2);});
