@@ -76,3 +76,8 @@
 #container #box3{
     background-color: green;
 }
+#dropZone{
+    background-color: skyblue;
+    width: 200px;
+    height: 100px;
+}
