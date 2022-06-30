@@ -81,3 +81,13 @@
     width: 200px;
     height: 100px;
 }
+
+/* drag & drop */
+.zones{
+    background-color: gray;
+    width: 200px;
+    height: 100px;
+}
+#item{
+    background-color: skyblue;
+}
