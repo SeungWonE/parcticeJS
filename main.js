@@ -88,3 +88,20 @@ function resetControlButton(index){
 controlButtons[0].addEventListener('click', function(){resetControlButton(0);moveSlider(0);});
 controlButtons[1].addEventListener('click', function(){resetControlButton(1);moveSlider(1);});
 controlButtons[2].addEventListener('click', function(){resetControlButton(2);moveSlider(2);});
+
+/* drag & drop */
+var zones = [document.getElementById('zone1'), document.getElementById('zone2')];
+var item = document.getElementById('item');
+
+function dropItem(event){
+    event.preventDefault();
+    var data = event.dataTransfer.getData('text');
+    event.target.appendChild(document.getElementById(data));
+}
+
+item.addEventListener('dragstart', event => {event.dataTransfer.setData('text', event.target.id);});
+zones[0].addEventListener('dragover', event => {event.preventDefault();});
+zones[1].addEventListener('dragover', event => {event.preventDefault();});
+zones[0].addEventListener('drop', event => {dropItem(event);});
+zones[1].addEventListener('drop', event => {dropItem(event);});
+
